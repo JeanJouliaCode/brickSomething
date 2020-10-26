@@ -1,0 +1,91 @@
+[debug] [2020-10-26T16:29:47.081Z] ----------------------------------------------------------------------
+[debug] [2020-10-26T16:29:47.083Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\jjeea\AppData\Roaming\npm-cache\_npx\1788\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --project bricksomething-2836d --json
+[debug] [2020-10-26T16:29:47.083Z] CLI Version:   8.13.1
+[debug] [2020-10-26T16:29:47.083Z] Platform:      win32
+[debug] [2020-10-26T16:29:47.083Z] Node Version:  v12.18.2
+[debug] [2020-10-26T16:29:47.084Z] Time:          Mon Oct 26 2020 17:29:47 GMT+0100 (GMT+01:00)
+[debug] [2020-10-26T16:29:47.084Z] ----------------------------------------------------------------------
+[debug] [2020-10-26T16:29:47.085Z] 
+[debug] [2020-10-26T16:29:47.091Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-10-26T16:29:47.091Z] > authorizing via signed-in user
+[debug] [2020-10-26T16:29:47.091Z] [iam] checking project bricksomething-2836d for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-10-26T16:29:47.094Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/bricksomething-2836d:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-10-26T16:29:47.737Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 26 Oct 2020 16:29:47 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=560","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-10-26T16:29:47.739Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bricksomething-2836d  
+ 
+[debug] [2020-10-26T16:29:47.937Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 26 Oct 2020 16:29:47 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'bricksomething-2836d'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2020-10-26T16:29:47.940Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/bricksomething-2836d/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-10-26T16:29:49.094Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 26 Oct 2020 16:29:49 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[bricksomething-2836d]: beginning deploy... 
+[info] i  hosting[bricksomething-2836d]: found 9 files in build 
+[debug] [2020-10-26T16:29:49.106Z] [hosting] hash cache [YnVpbGQ] stored for 9 files
+[debug] [2020-10-26T16:29:49.107Z] [hosting][hash queue][FINAL] {"max":2,"min":0,"avg":0,"active":0,"complete":9,"success":9,"errored":0,"retried":0,"total":9,"elapsed":4}
+[debug] [2020-10-26T16:29:49.107Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/bricksomething-2836d/versions/6707941f8aa09223:populateFiles  
+ <request body omitted>
+[debug] [2020-10-26T16:29:49.999Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 26 Oct 2020 16:29:49 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-10-26T16:29:49.999Z] [hosting][populate queue][FINAL] {"max":894,"min":894,"avg":894,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":894}
+[debug] [2020-10-26T16:29:50.000Z] [hosting] uploads queued: 0
+[debug] [2020-10-26T16:29:50.000Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1603729790000}
+[info] +  hosting[bricksomething-2836d]: file upload complete 
+[debug] [2020-10-26T16:29:50.000Z] [hosting] deploy completed after 905ms
+[debug] [2020-10-26T16:29:50.001Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "bricksomething-2836d"
+    },
+    "site": "bricksomething-2836d",
+    "version": "sites/bricksomething-2836d/versions/6707941f8aa09223"
+  }
+]
+[info] i  hosting[bricksomething-2836d]: finalizing version... 
+[debug] [2020-10-26T16:29:50.001Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/bricksomething-2836d/versions/6707941f8aa09223?updateMask=status  
+ {"status":"FINALIZED"}
+[debug] [2020-10-26T16:29:50.923Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 26 Oct 2020 16:29:50 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-10-26T16:29:50.923Z] [hosting] finalized version for bricksomething-2836d: {"name":"sites/bricksomething-2836d/versions/6707941f8aa09223","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2020-10-26T16:29:48.630936Z","createUser":{"email":"jjeeaann2015@gmail.com"},"finalizeTime":"2020-10-26T16:29:50.882185Z","finalizeUser":{"email":"jjeeaann2015@gmail.com"}}
+[info] +  hosting[bricksomething-2836d]: version finalized 
+[info] i  hosting[bricksomething-2836d]: releasing new version... 
+[debug] [2020-10-26T16:29:50.924Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/bricksomething-2836d/releases?version_name=sites/bricksomething-2836d/versions/6707941f8aa09223  
+ {"message":null}
+[debug] [2020-10-26T16:29:51.782Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 26 Oct 2020 16:29:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-10-26T16:29:51.782Z] [hosting] release: {"name":"sites/bricksomething-2836d/releases/1603729791081284","version":{"name":"sites/bricksomething-2836d/versions/6707941f8aa09223","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2020-10-26T16:29:48.630936Z","createUser":{"email":"jjeeaann2015@gmail.com"},"finalizeTime":"2020-10-26T16:29:50.882185Z","finalizeUser":{"email":"jjeeaann2015@gmail.com"},"preview":{}},"type":"DEPLOY","releaseTime":"2020-10-26T16:29:51.081284397Z","releaseUser":{"email":"jjeeaann2015@gmail.com"}}
+[info] +  hosting[bricksomething-2836d]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/bricksomething-2836d/overview
+[info] Hosting URL: https://bricksomething-2836d.web.app
+[debug] [2020-10-26T16:29:54.946Z] Error: EPERM: operation not permitted, unlink 'C:\Users\jjeea\AppData\Roaming\npm-cache\_npx\1788\node_modules\firebase-tools\node_modules\re2\build\Release\re2.node'
+    at Object.unlinkSync (fs.js:1129:3)
+    at fixWinEPERMSync (C:\Program Files\nodejs\node_modules\npm\node_modules\rimraf\rimraf.js:219:13)
+    at rimrafSync (C:\Program Files\nodejs\node_modules\npm\node_modules\rimraf\rimraf.js:319:28)
+    at C:\Program Files\nodejs\node_modules\npm\node_modules\rimraf\rimraf.js:350:5
+    at Array.forEach (<anonymous>)
+    at rmkidsSync (C:\Program Files\nodejs\node_modules\npm\node_modules\rimraf\rimraf.js:349:26)
+    at rmdirSync (C:\Program Files\nodejs\node_modules\npm\node_modules\rimraf\rimraf.js:342:7)
+    at fixWinEPERMSync (C:\Program Files\nodejs\node_modules\npm\node_modules\rimraf\rimraf.js:217:5)
+    at rimrafSync (C:\Program Files\nodejs\node_modules\npm\node_modules\rimraf\rimraf.js:319:28)
+    at C:\Program Files\nodejs\node_modules\npm\node_modules\rimraf\rimraf.js:350:5
+    at Array.forEach (<anonymous>)
+    at rmkidsSync (C:\Program Files\nodejs\node_modules\npm\node_modules\rimraf\rimraf.js:349:26)
+    at rmdirSync (C:\Program Files\nodejs\node_modules\npm\node_modules\rimraf\rimraf.js:342:7)
+    at fixWinEPERMSync (C:\Program Files\nodejs\node_modules\npm\node_modules\rimraf\rimraf.js:217:5)
+    at rimrafSync (C:\Program Files\nodejs\node_modules\npm\node_modules\rimraf\rimraf.js:319:28)
+    at C:\Program Files\nodejs\node_modules\npm\node_modules\rimraf\rimraf.js:350:5
