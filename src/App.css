@@ -1,0 +1,19 @@
+.App-header {
+  background-color: #222;
+  color: white;
+}
+
+.menu{
+  position: absolute;
+  display: flex;
+}
+
+.tab{
+  margin-left: 10px;
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
