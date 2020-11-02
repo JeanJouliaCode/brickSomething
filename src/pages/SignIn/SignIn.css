@@ -1,0 +1,62 @@
+.input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .submitBtn{
+      width: 100%;
+      height: 40px;
+      background-color: orange;
+      color: black;
+      border: 0px solid #4CAF50; /* Green */
+      border-radius: 10px;
+      outline:none;
+  }
+
+  .submitSpan{
+      margin: 10px;
+  }
+
+  .Roboto{
+    font-family: 'Titillium Web', sans-serif;
+  }
+  
+  .signInDiv{
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+  }
+
+  .formDiv{
+    margin: 20px;
+    width: 300px;
+  }
+
+  .line{
+    border-left: solid;
+    border-color: orange;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-width: 2px;
+  }
+
+  .centerContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .signUpBtn{
+    width: 100%;
+  }
+
+  .btnText{
+    font-size: medium;
+    font-weight: 500;
+  }

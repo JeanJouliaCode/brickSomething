@@ -1,0 +1,24 @@
+.profilPic{
+    border-radius: 50%;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.infoDiv{
+    align-items: center;
+    display: flex;
+    background-color: #fae967;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    height: 40px;
+    border-bottom: solid;
+    border-bottom-color:rgb(247, 217, 88);
+    border-bottom-width: 2px;
+}
+
+.displayName{
+    font-weight: 700;
+    margin-right: 10px;
+    color: black;
+    font-family: 'Titillium Web', sans-serif;
+}
