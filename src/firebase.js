@@ -1,7 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
-import { functions } from "firebase";
 
  
 const config = {
@@ -21,8 +20,15 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
-export const signInWithGoogle = () => {
-  auth.signInWithPopup(provider);
+export const signInWithGoogle = async () => {
+  try{
+    const result = await auth.signInWithPopup(provider);
+    return result;
+  }
+  catch(error){
+    console.warn(error);
+    return null;
+  }
 };
 
 export const generateUserDocument = async (user, additionalData) => {
@@ -44,10 +50,11 @@ export const generateUserDocument = async (user, additionalData) => {
       console.error("Error creating user document", error);
     }
   }
+
   return getUserDocument(user.uid);
 };
 
-const getUserDocument = async uid => {
+export const getUserDocument = async uid => {
   if (!uid) return null;
   try {
     const userDocument = await firestore.doc(`users/${uid}`).get();

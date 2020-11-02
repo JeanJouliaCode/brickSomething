@@ -1,25 +1,48 @@
 import {
   Link,
+  useHistory, 
 } from 'react-router-dom';
 
-import React, { useState } from "react";
-import { signInWithGoogle } from "../../firebase";
+import React, { useState , useContext} from "react";
+import { signInWithGoogle , getUserDocument , generateUserDocument} from "../../firebase";
+import { UserContext } from "../../providers/UserProvider";
 import { auth } from "../../firebase";
+
 import './SignIn.css';
 
 
 const SignIn = () => {
 
+  let history = useHistory();
+  const userContext = useContext(UserContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
 
-  const signInWithEmailAndPasswordHandler = (event, email, password) => {
+  const signInWithEmailAndPasswordHandler = async (event, email, password) => {
     event.preventDefault();
-    auth.signInWithEmailAndPassword(email, password).catch(error => {
-      setError("Error signing in with password and email!");
+    const {user} = await auth.signInWithEmailAndPassword(email, password).catch(error => {
+      setError("Wrong password or email");
       console.error("Error signing in with password and email", error);
     });
+
+    history.push('/home');
+  };
+
+  const signInUsingGoogle = async (event) => {
+    event.preventDefault();
+    try {
+      const result = await signInWithGoogle();
+      if (result) {
+        const userDoc = await generateUserDocument(result.user, { "displayName": result.user.displayName });
+        userContext.setUserObject(userDoc);
+        history.push('/home');
+      }
+    }
+    catch (error) {
+      console.log(error);
+      setError('Error Signing up with email and password');
+    }
   };
 
   const onChangeHandler = (event) => {
@@ -38,11 +61,11 @@ const SignIn = () => {
     <div className="waveBackground fillspace">
       <div className="center signInDiv">
         <div className="formDiv">
-          <h1 className="">Sign In</h1>
+          <h1 className="Roboto">Sign in</h1>
           {error !== null && <div className="">{error}</div>}
           <form className="">
             <div>
-              <label htmlFor="userEmail" className="block">
+              <label htmlFor="userEmail" className="Roboto">
                 Email:
             </label>
               <br></br>
@@ -58,7 +81,7 @@ const SignIn = () => {
             </div>
 
             <div>
-              <label htmlFor="userPassword" className="block">
+              <label htmlFor="userPassword" className="block Roboto">
                 Password:
             </label>
               <br></br>
@@ -74,26 +97,30 @@ const SignIn = () => {
             </div>
 
             <button className="submitBtn" onClick={(event) => { signInWithEmailAndPasswordHandler(event, email, password) }}>
-              <span  className="submitSpan">Sign in</span> 
-          </button>
+              <span className="submitSpan Roboto btnText">Submit</span>
+            </button>
           </form>
 
-          <img onClick={() => {
-            signInWithGoogle();
-          }} src={require('../../assets/google-btn.png')} alt="google btn" />
+          <br></br>
 
           <p className="">
-            Don't have an account?{" "}
-            <Link to="signUp" className="">
-              Sign up here
-          </Link>{" "}
-            <br />{" "}
-            <Link to="passwordReset" className="">
+            <Link to="passwordReset" className="Roboto">
               Forgot Password?
           </Link>
           </p>
         </div>
-
+        <div className="line"></div>
+        <div className="formDiv centerContent">
+          <Link to="signUp" className="signUpBtn">
+            <button className="submitBtn" >
+              <span className="submitSpan Roboto btnText">Sign up</span>
+            </button>
+          </Link>
+          <br></br>
+          <img onClick={ event => {
+            signInUsingGoogle(event);
+          }} src={require('../../assets/google-btn.png')} alt="google btn" />
+        </div>
       </div>
     </div>
   );

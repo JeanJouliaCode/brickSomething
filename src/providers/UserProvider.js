@@ -1,5 +1,5 @@
 import React, { Component, createContext } from "react";
-import { auth } from "../firebase";
+import { auth , getUserDocument } from "../firebase";
 
 export const UserContext = createContext({ user: null });
 class UserProvider extends Component {
@@ -8,13 +8,24 @@ class UserProvider extends Component {
   };
 
   componentDidMount = () => {
-    auth.onAuthStateChanged(userAuth => {
-      this.setState({ user: userAuth});
+    auth.onAuthStateChanged( async (userAuth )=> {
+      console.log('state changed')
+      if(userAuth){
+        const userDoc = await getUserDocument(userAuth.uid);
+        this.setState({ user: userDoc});
+      }
     });
   };
+
+  setUserObject = (userInfo) =>{
+    this.setState({ user: userInfo});
+  }
+
   render() {
+    const { user } = this.state;
+    const { setUserObject } = this;
     return (
-      <UserContext.Provider value={this.state.user}>
+      <UserContext.Provider value={{user ,setUserObject}}>
         {this.props.children}
       </UserContext.Provider>
     );

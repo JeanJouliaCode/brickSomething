@@ -24,7 +24,6 @@ class App extends Component {
       <div className="App">
         <UserProvider>
         <header className="App-header">
-        </header>
         <div className="menu">
               <div className="tab"> <Link to="/">Home</Link> </div>
               <div className="tab"> <Link to="/messages">Messages</Link> </div>
@@ -32,8 +31,9 @@ class App extends Component {
               <div className="tab"> <Link to="/signIn">sign in</Link> </div>
               <div className="tab"> <Link to="/signUp">sign up</Link> </div>
               <div className="tab"> <Link to="/passwordReset">password reset</Link> </div>
-              <div className="tab"> <Link to="/userInfo">user info</Link> </div>
         </div>
+        <UserInfo />
+        </header>
         <div className="App-intro">
           <Switch>
             <Route exact path="/">
@@ -53,9 +53,6 @@ class App extends Component {
             </Route>
             <Route path="/signIn">
               <SignIn />
-            </Route>
-            <Route path="/userInfo">
-              <UserInfo />
             </Route>
             <Redirect to="/" />
           </Switch>

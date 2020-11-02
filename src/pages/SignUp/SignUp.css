@@ -1,0 +1,14 @@
+.formWideDiv{
+    margin: 20px;
+    width: 400px;
+  }
+
+.signUpGoogleTxt{
+    text-align: center;
+}
+
+.centerImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

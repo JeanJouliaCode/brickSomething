@@ -1,11 +1,10 @@
-.App-header {
-  background-color: #222;
-  color: white;
-}
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap');
+
 
 .menu{
   position: absolute;
   display: flex;
+  z-index: 2;
 }
 
 .tab{
@@ -29,18 +28,9 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   height: 100%;
 }
 
-.signInDiv{
-  background-color: white;
-  border-radius: 10px;
-}
-
 .center {
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
-}
-
-.formDiv{
-  margin: 20px;
 }
