@@ -14,6 +14,9 @@ class UserProvider extends Component {
         const userDoc = await getUserDocument(userAuth.uid);
         this.setState({ user: userDoc});
       }
+      else{
+        this.setState({ user: null});
+      }
     });
   };
 
