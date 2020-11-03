@@ -2,6 +2,7 @@
     border-radius: 50%;
     width: 30px;
     margin-right: 10px;
+    margin-left: 10px;
 }
 
 .infoDiv{
@@ -11,8 +12,6 @@
     flex-shrink: 0;
     justify-content: flex-end;
     height: 40px;
-    border-bottom: solid;
-    border-bottom-color:rgb(247, 217, 88);
     border-bottom-width: 2px;
 }
 
@@ -22,3 +21,75 @@
     color: black;
     font-family: 'Titillium Web', sans-serif;
 }
+
+.signInBtn{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: medium;
+    border-radius: 2px;
+    background-color: #faf7df;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.signInBtnText{
+    margin-left: 40px;
+    margin-right: 40px;
+    font-weight: 700;
+}
+
+.dropDown{
+    height: 100%;
+}
+
+.PicAndName{
+    height: 100%;
+    align-items: center;
+    display: flex;
+    background-color: white;
+    cursor: pointer;
+}
+
+.dropDownMenu{
+    right: 0;
+    position: absolute;
+    background-color: white;
+}
+
+.tile{
+    display: flex;
+    align-items: center;
+    border-bottom: solid;
+    border-left: solid;
+    border-right: solid;
+    border-width: 1px;
+    border-color: gainsboro;
+    height: 30px;
+    width: 140px;
+}
+
+.tileText{
+    margin-left: 10px;
+    margin-right: 20px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.linkSignIn{
+    height: 100%;
+    text-decoration: none;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
